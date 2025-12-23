@@ -11,8 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
         expression: document.getElementById('expression'),
         historyList: document.getElementById('history-list'),
         radDegBtn: document.getElementById('rad-deg'),
-        keyPad: document.getElementById('keypad')
+        radDegBtn: document.getElementById('rad-deg'),
+        // Robust selection: ID > Backup by class structure > Body fallback
+        keyPad: document.getElementById('keypad') || document.querySelector('.grid')?.parentElement || document.body
     };
+
+    if (!elements.keyPad) {
+        console.error('Critical: Keypad element not found!');
+        return;
+    }
 
     // 3. Bind Events & UI
     bindEvents(calculator, elements);
