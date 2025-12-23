@@ -32,18 +32,18 @@
 
 ```mermaid
 graph TD
-    User((User)) -->|"Input Click/Key"| UI[UI Layer\n(HTML/DOM)]
-    UI -->|Event| Handler[Event Handler\n(Input Processing)]
+    User((User)) -->|"Input Click/Key"| UI[UI Layer]
+    UI -->|Event| Handler[Event Handler]
     
     subgraph Core Logic
-        Handler -->|Action| State[State Manager\n(History & Status)]
-        State -->|Request| Engine[Calculator Engine\n(Business Logic)]
-        Engine -->|Compute| Math[Math Modules\n(Scientific Functions)]
+        Handler -->|Action| State[State Manager]
+        State -->|Request| Engine[Calculator Engine]
+        Engine -->|Compute| Math[Math Modules]
         Math -->|Result| Engine
         Engine -->|Update| State
     end
     
-    State -->|Format| Formatter[Formatter\n(Display Logic)]
+    State -->|Format| Formatter[Formatter]
     Formatter -->|Render| UI
     
     style User fill:#fff,stroke:#333

@@ -48,6 +48,10 @@ export function bindEvents(calculator, elements) {
             calculator.inputDecimal();
         } else if (action === 'operator') {
             calculator.handleOperator(value);
+        } else if (action === 'parenthesis') {
+            calculator.inputParenthesis(value);
+        } else if (action === 'power') {
+            calculator.handleOperator('^');
         } else if (action === 'calculate') {
             calculator.calculate();
         } else if (action === 'clear') {
