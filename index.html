@@ -60,7 +60,11 @@
         }
 
         body {
-            min-height: max(884px, 100dvh);
+            /* Fix for mobile viewport height */
+            min-height: 100dvh;
+            height: 100dvh;
+            overflow: hidden;
+            /* Prevent scrolling, everything fits */
         }
     </style>
 </head>
@@ -102,60 +106,60 @@
 
     <!-- Keypad Container -->
     <div id="keypad"
-        class="w-full max-w-md mx-auto bg-white/50 dark:bg-[#161b26] backdrop-blur-xl rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-white/20 dark:border-white/5 p-4 pb-8 h-auto shrink-0 z-10">
+        class="w-full max-w-md mx-auto bg-white/50 dark:bg-[#161b26] backdrop-blur-xl rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-white/20 dark:border-white/5 p-3 sm:p-4 pb-6 sm:pb-8 h-auto shrink-0 z-10">
         <!-- Scientific Functions Grid -->
-        <div class="grid grid-cols-5 gap-3 mb-4">
+        <div class="grid grid-cols-5 gap-2 sm:gap-3 mb-3 sm:mb-4">
             <!-- Row 1 Sci -->
             <button data-action="sin"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">sin</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">sin</button>
             <button data-action="cos"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">cos</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">cos</button>
             <button data-action="tan"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">tan</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">tan</button>
             <button data-action="pi"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">π</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">π</button>
             <button data-action="e"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">e</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">e</button>
             <!-- Row 2 Sci -->
             <button data-action="ln"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">ln</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">ln</button>
             <button data-action="log"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">log</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">log</button>
             <button data-action="reciprocal"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">1/x</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">1/x</button>
             <button data-action="square"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">x²</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">x²</button>
             <button data-action="sqrt"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">√</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">√</button>
             <!-- Row 3 Sci -->
             <button data-action="parenthesis" data-value="("
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">(</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">(</button>
             <button data-action="parenthesis" data-value=")"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">)</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">)</button>
             <button data-action="power" data-value="^"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">^</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">^</button>
             <button data-action="percent"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">%</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">%</button>
             <button data-action="backspace"
-                class="h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-sm font-medium hover:brightness-110 active:scale-95 transition-all">⌫</button>
+                class="h-9 sm:h-10 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-[#282e39] text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-medium hover:brightness-110 active:scale-95 transition-all">⌫</button>
         </div>
 
         <!-- Divider -->
-        <div class="h-px bg-slate-200 dark:bg-white/5 w-full mb-4"></div>
+        <div class="h-px bg-slate-200 dark:bg-white/5 w-full mb-3 sm:mb-4"></div>
 
         <!-- Main Numpad & Operations Grid -->
-        <div class="grid grid-cols-4 gap-3">
+        <div class="grid grid-cols-4 gap-2 sm:gap-3">
             <!-- Row 1: Actions -->
             <button data-action="clear"
-                class="h-16 flex items-center justify-center rounded-2xl bg-slate-300 dark:bg-[#3b4354] text-slate-900 dark:text-white text-xl font-bold hover:brightness-110 active:scale-95 transition-all">AC</button>
+                class="h-14 sm:h-16 flex items-center justify-center rounded-2xl bg-slate-300 dark:bg-[#3b4354] text-slate-900 dark:text-white text-xl font-bold hover:brightness-110 active:scale-95 transition-all">AC</button>
             <button data-action="backspace"
-                class="h-16 flex items-center justify-center rounded-2xl bg-slate-300 dark:bg-[#3b4354] text-slate-900 dark:text-white text-xl font-bold hover:brightness-110 active:scale-95 transition-all">
+                class="h-14 sm:h-16 flex items-center justify-center rounded-2xl bg-slate-300 dark:bg-[#3b4354] text-slate-900 dark:text-white text-xl font-bold hover:brightness-110 active:scale-95 transition-all">
                 <span class="material-symbols-outlined">backspace</span>
             </button>
             <button data-action="percent"
-                class="h-16 flex items-center justify-center rounded-2xl bg-slate-300 dark:bg-[#3b4354] text-slate-900 dark:text-white text-xl font-bold hover:brightness-110 active:scale-95 transition-all">%</button>
+                class="h-14 sm:h-16 flex items-center justify-center rounded-2xl bg-slate-300 dark:bg-[#3b4354] text-slate-900 dark:text-white text-xl font-bold hover:brightness-110 active:scale-95 transition-all">%</button>
             <button data-action="divide"
-                class="h-16 flex items-center justify-center rounded-2xl bg-blue-100 dark:bg-[#18202f] text-primary text-2xl font-bold hover:brightness-110 active:scale-95 transition-all">÷</button>
+                class="h-14 sm:h-16 flex items-center justify-center rounded-2xl bg-blue-100 dark:bg-[#18202f] text-primary text-2xl font-bold hover:brightness-110 active:scale-95 transition-all">÷</button>
 
             <!-- Row 2: 7-9 -->
             <button data-action="number" data-value="7"
