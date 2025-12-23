@@ -51,16 +51,16 @@ export class Calculator {
         if (this.state.shouldResetDisplay && this.state.lastResult !== null) {
             // Continue calculation with last result
             this.state.expression = this.state.lastResult + ' ' + op + ' ';
-            this.state.shouldResetDisplay = false;
-            this.state.currentValue = '0';
+            this.state.shouldResetDisplay = true; // Still waiting for new number
+            // this.state.currentValue = '0'; // DELETE: Don't clear display
             return;
         }
 
-        // If user types 12 +, we append "12 +" to expression
-        // We need to handle the case where we just added an operator. replacement?
-        // For now, assume simple append.
+        // Standard operator: 12 +
+        // Append current number and operator to expression
         this.state.expression += this.state.currentValue + ' ' + op + ' ';
-        this.state.currentValue = '0';
+        this.state.shouldResetDisplay = true; // Next digit will start fresh
+        // this.state.currentValue = '0'; // DELETE: Keep showing 12 until new input
     }
 
     inputParenthesis(paren) {

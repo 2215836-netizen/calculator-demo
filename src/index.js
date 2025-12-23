@@ -8,6 +8,10 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Prevent double initialization
+    if (window.__CALC_INIT__) return;
+    window.__CALC_INIT__ = true;
+
     try {
         // 1. Initialize Core Engine
         const calculator = new Calculator();
