@@ -117,7 +117,11 @@ export class Calculator {
         const isDegree = !this.state.isRadianMode;
         let result = 0;
 
-        if (scientific[func]) {
+        if (func === 'pi') {
+            result = Math.PI;
+        } else if (func === 'e') {
+            result = Math.E;
+        } else if (scientific[func]) {
             result = scientific[func](value, isDegree);
         }
 
