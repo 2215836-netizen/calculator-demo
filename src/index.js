@@ -38,4 +38,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error(e);
     }
 });
-```
