@@ -602,7 +602,7 @@ git push origin main
 
 # 2. GitHub Actions 자동 실행
 # 3. 배포 완료 후 접속
-# https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+# https://2215836-netizen.github.io/calculator-demo/
 ```
 
 ### 10.2 GitHub Pages 설정
@@ -614,7 +614,7 @@ git push origin main
 
 #### 10.2.2 배포 URL
 ```
-https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+https://2215836-netizen.github.io/calculator-demo/
 ```
 
 ### 10.3 빌드 프로세스

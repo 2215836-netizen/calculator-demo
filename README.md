@@ -1,6 +1,6 @@
 # 공학용 계산기 (Scientific Calculator)
 
-[![Deploy Status](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/deploy.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/deploy.yml)
+[![Deploy Status](https://github.com/2215836-netizen/calculator-demo/actions/workflows/deploy.yml/badge.svg)](https://github.com/2215836-netizen/calculator-demo/actions/workflows/deploy.yml)
 
 모던하고 직관적인 UI/UX를 갖춘 웹 기반 공학용 계산기입니다.
 
@@ -35,7 +35,7 @@
 ### 온라인에서 사용
 배포된 사이트에서 바로 사용하세요:
 ```
-https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+https://2215836-netizen.github.io/calculator-demo/
 ```
 
 ### 로컬에서 실행
@@ -197,7 +197,7 @@ This project is licensed under the MIT License.
 
 ## 📞 연락처
 
-프로젝트 링크: [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME)
+프로젝트 링크: [https://github.com/2215836-netizen/calculator-demo](https://github.com/2215836-netizen/calculator-demo)
 
 ---
 
