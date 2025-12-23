@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Browser TDD Runner</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #111;
+            color: #eee;
+            padding: 20px;
+        }
+
+        .pass {
+            color: #4caf50;
+        }
+
+        .fail {
+            color: #f44336;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Browser TDD Runner</h1>
+    <p>Open Console (F12) to see detailed results.</p>
+    <div id="results"></div>
+
+    <script type="module">
+        // Override console to display on screen
+        const results = document.getElementById('results');
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalGroup = console.group;
+        const originalGroupEnd = console.groupEnd;
+
+        function appendResult(msg, color) {
+            const div = document.createElement('div');
+            div.textContent = msg;
+            div.style.color = color;
+            results.appendChild(div);
+        }
+
+        console.log = function (...args) {
+            originalLog(...args);
+            if (args[0] && typeof args[0] === 'string' && args[0].includes('✓')) {
+                appendResult(args[0].replace('%c', ''), '#4caf50');
+            } else {
+                // appendResult(args.join(' '), '#ccc');
+            }
+        };
+
+        console.error = function (...args) {
+            originalError(...args);
+            if (args[0] && typeof args[0] === 'string' && args[0].includes('✗')) {
+                appendResult(args[0].replace('%c', ''), '#f44336');
+            } else if (args[0] instanceof Error) {
+                appendResult(`  ${args[0].message}`, '#f44336');
+            }
+        };
+
+        console.group = function (label) {
+            originalGroup(label);
+            const h3 = document.createElement('h3');
+            h3.textContent = label;
+            h3.style.marginTop = '20px';
+            h3.style.borderBottom = '1px solid #333';
+            results.appendChild(h3);
+        }
+
+        // Load tests
+        import './src/core/operations.test.js';
+        import './src/core/scientific.test.js';
+        import './src/core/Calculator.test.js';
+    </script>
+</body>
+
+</html>

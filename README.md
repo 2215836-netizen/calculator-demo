@@ -32,7 +32,7 @@
 
 ```mermaid
 graph TD
-    User((User)) -->|Input Click/Key| UI[UI Layer\n(HTML/DOM)]
+    User((User)) -->|"Input Click/Key"| UI[UI Layer\n(HTML/DOM)]
     UI -->|Event| Handler[Event Handler\n(Input Processing)]
     
     subgraph Core Logic
