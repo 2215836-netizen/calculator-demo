@@ -49,6 +49,14 @@ export function bindEvents(calculator, elements) {
             calculator.inputDigit(value);
         } else if (action === 'decimal') {
             calculator.inputDecimal();
+        } else if (action === 'add') {
+            calculator.handleOperator('+');
+        } else if (action === 'subtract') {
+            calculator.handleOperator('-');
+        } else if (action === 'multiply') {
+            calculator.handleOperator('*');
+        } else if (action === 'divide') {
+            calculator.handleOperator('/');
         } else if (action === 'operator') {
             calculator.handleOperator(value);
         } else if (action === 'parenthesis') {
