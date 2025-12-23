@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         expression: document.getElementById('expression'),
         historyList: document.getElementById('history-list'),
         radDegBtn: document.getElementById('rad-deg'),
-        keyPad: document.querySelector('.grid') // Assuming the keypad is the main grid
+        keyPad: document.getElementById('keypad')
     };
 
     // 3. Bind Events & UI
